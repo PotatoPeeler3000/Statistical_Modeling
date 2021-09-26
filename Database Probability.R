@@ -15,5 +15,5 @@ for (i in 1:1e6)
 }
 
 #Print probability
-print(storage)
-print(1 - sum(storage)/1e6)
+probability = 1 - sum(storage)/1e6
+print(probability)
