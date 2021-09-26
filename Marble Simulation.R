@@ -4,16 +4,15 @@ storage = rep(0, 1e6)
 
 for(i in 1:1e6)
 {
+  #Sample three values from the bag without replacement
   pick <- sample(bag, 3)
-  
   equal = abs(diff(pick))
-  #print(equal)
-  #print("--- sotrage ---a")
-  storage[i] = sum(equal, na.rm=TRUE)
-  #print(storage[i])
-  storage[i] = (storage[i] == 0)
-  #print(storage[i])
   
+  #Convert the difference of the bag values into true and false
+  storage[i] = sum(equal, na.rm=TRUE)
+  storage[i] = (storage[i] == 0)
 }
+
+#Print probability
 probability = sum(storage)/1e6
 print(probability)
