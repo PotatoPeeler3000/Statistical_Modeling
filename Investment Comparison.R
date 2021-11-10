@@ -1,3 +1,4 @@
+set.seed(444)
 #Declare Variables
 red = white = green = red_white = 1000
 red_dice = c(0.05, 0.2, 1, rep(3,3))
@@ -28,8 +29,10 @@ w_table = c(mean(w_values), min(w_values), quantile(w_values, 0.1), median(w_val
 g_table = c(mean(g_values), min(g_values), quantile(g_values, 0.1), median(g_values), quantile(g_values, 0.9), max(g_values))
 r_w_table = c(mean(r_w_values), min(r_w_values), quantile(r_w_values, 0.1), median(r_w_values), quantile(r_w_values, 0.9), max(r_w_values))
 
-print("Mean-----------Minimum Value--10th Percentile-----Median Value--90th Percentile----Maximum Value")
-table(r_table)
-table(w_table)
-table(g_table)
-table(r_w_table)
+options(scipen = 100)
+r = 3
+results = matrix(c(round(r_table, digits = r), round(w_table, digits = r), round(g_table, digits = r), round(r_w_table, digits = r)),nrow = 6, ncol = 4)
+colnames(results) = c("Red", "White", "Green", "Red-White")
+rownames(results) = c("Mean", "Minimum", "10th Percentile", "Median", "90th Percentile", "Maximum")
+
+print(results)
