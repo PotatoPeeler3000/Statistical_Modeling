@@ -1,5 +1,5 @@
 #Declare Variables
-x = rep(0:60)
+x = rep(0:59)
 y = rep(0, 1e6)
 
 for (i in 1:1e6)
