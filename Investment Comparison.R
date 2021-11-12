@@ -11,6 +11,7 @@ r_w_values = rep(0, 1e6)
 
 for( i in 1:1e6)
 {
+  #Sample values and compute the resulting money amounts
   r20 = sample(red_dice, 20, replace=T)
   w20 = sample(white_dice, 20, replace=T)
   g20 = sample(green_dice, 20, replace=T)
@@ -24,6 +25,7 @@ for( i in 1:1e6)
   r_w_values[i] = red_white * prod(r_w_middle)
 }
 
+#Format output for desired table effect
 r_table = c(mean(r_values), min(r_values), quantile(r_values, 0.1), median(r_values), quantile(r_values, 0.9), max(r_values))
 w_table = c(mean(w_values), min(w_values), quantile(w_values, 0.1), median(w_values), quantile(w_values, 0.9), max(w_values))
 g_table = c(mean(g_values), min(g_values), quantile(g_values, 0.1), median(g_values), quantile(g_values, 0.9), max(g_values))
