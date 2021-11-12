@@ -1,14 +1,6 @@
-#Declare Variables
-x = rep(0:59)
-y = rep(0, 1e6)
+x = runif(1e6, 0, 60)
+y = runif(1e6, 0, 60)
 
-for (i in 1:1e6)
-{
-  person_a = sample(x, 1, replace=T)
-  person_b = sample(x, 1, replace=T)
-  
-  values = c(person_a, person_b)
-  
-  y[i] = abs(diff(values)) <= 10
-}
-print(sum(y)/1e6)
+array = abs(x - y) <= 10
+
+print(sum(array)/1e6)
